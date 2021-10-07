@@ -24,11 +24,13 @@
 
 helpURL = "https://www.mathworks.com/help/matlab/";
 documentation = web(helpURL)
+%TRUE ANSWER
 
 % 2. What does the command 'clear all' do?
 %
 % Answer: 
 % This command erases everything that is written in the "Workspace".
+% TRUE ANSWER
 
 
 % 3. What function would you use to take the average of the following
@@ -58,6 +60,7 @@ url = 'https://www.mathworks.com/help/images/referencelist.html?type=function&s_
 imageToolboxURL = web(url)
 
 help images
+%TRUE ANSWER
 
 % 6. On the line below figure, write a command to draw a graph of 
 % x and y. 
@@ -90,6 +93,7 @@ stdValues = std(values);
 %%% Bartlett Test %%%
 %[ndim, prob, chisquare] = barttest(values,0.05); % this test does not work
 %on my computer, I don't have the toolbox to run it.
+% OTHER ANWSER --> x = anoval(y)
 
 % 8. What are the 2 major types of loops that MATLAB supports? What is the
 % difference between them?
@@ -111,6 +115,7 @@ for i=1:10;
     value = value + 1;
 end
 
+%OTHER ANSWER --> While loop
 
 % 9. What does NaN stand for? Give an example of when you would get NaN as
 % an answer. 
@@ -130,6 +135,7 @@ A = [1 2 3 2 1 NaN 1 2 3 NaN];
 S = sum(A)
 
 s = nansum(A) % Return the sum of A without taking into accout the value NaN.
+%FALSE ANSWER --> sum(A, 'omitnan')
 
 % 11. I used to love playing the game minesweeper. Is there a way that I
 % could play a similar game on Matlab? Write the command that would launch
@@ -139,6 +145,7 @@ s = nansum(A) % Return the sum of A without taking into accout the value NaN.
 %minesweepergame(10,5,10); % this test does not work
 %on my computer, I don't have the toolbox to run it.
 xpbombs %short cut to open the game
+%TRUE ANWSER
 
 % 12. Create a variable myage and store your age on the day the hurricane is 
 % supposed to impact our area in it. Subtract two from the value of the
@@ -197,6 +204,7 @@ ftemp = (cTemp*1.8)+32 ; % From my french perspective
 vecA = [2;3;4;5;6;7];
 vecB = [1.1000; 1.3000; 1.5000; 1.7000];
 vecC = [8; 6; 4; 2];
+%OTHER ANSWER  --> vecA = 2:7;  ex.
 
 % 20. Give the MATLAB expression that would create a vector 
 % (in a variable called vec) of 50 elements that range, equally spaced, 
@@ -209,6 +217,7 @@ vec = linspace(0,2*pi,50);
 
 colvec = -1:0.5:1;
 colvec = colvec';
+%TRUE ANSWER
 
 % 22. Create a variable called rows that is a random integer in the inclusive range 
 % from 1 to 5. Create a variable called cols that is a random integer in the 
