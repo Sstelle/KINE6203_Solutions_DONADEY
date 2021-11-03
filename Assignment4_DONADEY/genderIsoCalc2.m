@@ -46,8 +46,8 @@ maleIsoIndMeans = round(10^1*maleIsoIndMeans)/10^1;
 femaleIsoIndMeans = round(10^1*femaleIsoIndMeans)/10^1;
 
 % Calculate the mean of the gender vector, for females and males
-maleGroupIsoMean = mean(mean(maleIsoIndMeans));
-femaleGroupIsoMean = mean(mean(femaleIsoIndMeans));
+maleGroupIsoMean = mean(maleIsoIndMeans);
+femaleGroupIsoMean = mean(femaleIsoIndMeans);
 
 % Round values at 10^-1 (0.1) & display values without excessive zeros
 maleGroupIsoMean = round(10^1*maleGroupIsoMean)/10^1;
