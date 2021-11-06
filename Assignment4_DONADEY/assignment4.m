@@ -21,7 +21,10 @@
 % - Store the results in a table 
 % 
 % Results are exported on a document named "iso_results.csv"
-% When a 
+% In a .csv file, when there's "NaN" it means that there's is no number to
+% be considered in the vector. "NaN" repalvces an empty spot in order to be
+% able to export a table with colum with all the same length. I didn't
+% figured uot how to export a jagged/ragged table...
 %
 % /!\ DON'T FORGET TO HAVE THE FUNCTION IN THE SAME FILE AS THIS SCRIPT /!\
 % 
