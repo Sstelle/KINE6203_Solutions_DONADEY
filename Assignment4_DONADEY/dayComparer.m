@@ -1,4 +1,4 @@
-function dayXtoDayY = dayComparer2(SubjectID, DayX, DayY)
+function dayXtoDayY = dayComparer(SubjectID, DayX, DayY)
 % This function compare the values of two days and store the Subject ID in 
 % a variable (dayXtoDayY) if the isometric strength value has increased between 
 % the two days compared.

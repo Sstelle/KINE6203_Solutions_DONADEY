@@ -13,12 +13,15 @@
 % Analyses concern :
 % - Importing the data 
 % - Determining  mean isometric strength values accross the 3 days depending 
-% on gender and calculating the overal mean of gender isometric strength values.
+%   on gender and calculating the overall mean of gender isometric strength values.
 % - Comparing isometric strength values between the 3 days and identifying
-% participants with increased values from Day1 to Day2 and from Day2 to
-% Day3.
+%   participants with increased values from Day1 to Day2 and from Day2 to Day3.
+% - Normalize the data of each participant regarding their weight and
+%   calculate the average of isometric strength value for each day
+% - Store the results in a table 
 % 
 % Results are exported on a document named "iso_results.csv"
+% When a 
 %
 % /!\ DON'T FORGET TO HAVE THE FUNCTION IN THE SAME FILE AS THIS SCRIPT /!\
 % 
@@ -34,13 +37,13 @@ clc
 
 % Function to calculate gender individual and mean isometric strength values
 % accross the 3 days
-[maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMean] = genderIsoCalc2(Gender,Day1,Day2,Day3);
+[maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMean] = genderIsoCalc(Gender,Day1,Day2,Day3);
 
 % Function to determine which participant showed an increase in isometric
 % strength values between Day1 and Day2 and between Day2 and Day 3
-day1toDay2 = dayComparer2(SubjectID, Day1, Day2);
-day2toDay3 = dayComparer2(SubjectID, Day2, Day3);
-% day1toDay3 = dayComparer2(SubjectID, Day1, Day3)
+day1toDay2 = dayComparer(SubjectID, Day1, Day2);
+day2toDay3 = dayComparer(SubjectID, Day2, Day3);
+% day1toDay3 = dayComparer2(SubjectID, Day1, Day3);
 
 % Normalizing data
 Weight = Weight'; % Transform row vector in colum vector like every other vector
@@ -69,11 +72,12 @@ normDay3mean =  round(10^1*normDay3mean)/10^1;
 % Export results
 
 % Creating a Table with empty values
-sz = [13 9]; % 13 is the maximum values I have for male group, so 13 lines is enough for the table 
+sz = [13 9];% 13 is the maximum values I have for male group, so 13 lines is enough for the table 
 varTypes = ["double","double","double","double","double","double","double","double","double"];
 varNames = ["maleIsoIndMeans","femaleIsoIndMeans","maleGroupIsoMean","femaleGroupIsoMean","day1toDay2","day2toDay3","normDay1mean","normDay2mean","normDay3mean"];
 
 isokData_results = table('Size',sz,'VariableTypes',varTypes,'VariableNames',varNames); % Creation of an empty table
+isokData_results(:,:) = {NaN};
 
 % Inserting values from each vector into a colum of the table, leaving
 % empty values (0) if the  value is not existant

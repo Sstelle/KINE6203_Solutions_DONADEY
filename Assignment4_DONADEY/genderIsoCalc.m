@@ -1,4 +1,4 @@
-function [maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMean] = genderIsoCalc2(Gender,Day1,Day2,Day3)
+function [maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMean] = genderIsoCalc(Gender,Day1,Day2,Day3)
 % This function calculate the mean isometric strength values across all 
 % 3 days of lifting and store it in a vector. Then the values of this new 
 % vector (not an output) are sorted depending on the participant gender (Male or Female).  
