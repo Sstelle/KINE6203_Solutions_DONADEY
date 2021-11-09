@@ -28,7 +28,7 @@ moderate = 2;               % moderate level #
 advanced = 3;               % advanced level #
 beginnerHighest = 10;       % highest possible number for beginner
 moderateHighest = 100;      % highest possible number for moderate
-advancedHighest = 1000;    % highest possible number for advanced
+advancedHighest = 1000;     % highest possible number for advanced
 
 % clear screen and display game introduction
 
@@ -106,7 +106,7 @@ while userGuess ~= secretNumber
     % get a valid guess (an integer from 1-Highest) from the user
     
     fprintf('\nEnter a guess (1-%d): ', highest);
-    userGuess = input('')
+    userGuess = input('');
     
     while userGuess < 1 || userGuess > highest % BUG HERE#6:  Statement is wrong
                                                % HOW FOUND#6: While running
